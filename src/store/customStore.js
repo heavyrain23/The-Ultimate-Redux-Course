@@ -2,6 +2,7 @@ import reducer from './reducer'
 
 
 
+
 function createStore(reducer) {
     let state;
     let listeners = [];
