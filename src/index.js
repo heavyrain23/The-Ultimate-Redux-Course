@@ -1,17 +1,13 @@
-import store from './store'
+import store from './customStore'
+import * as actions from './actions'
 
-store.dispatch({
-    type: 'bugAdded',
-    payload: {
-        description: 'Bug1'
-    }
+store.subscribe(() => {
+    console.log("Store changed!");
 });
 
-store.dispatch({
-    type: 'bugRemoved',
-    payload: {
-        id: 1
-    }
-});
+store.dispatch(actions.bugAdded('Bug 1'))
 
-console.log(store.getState())
+
+console.log(store.getState());
+
+
